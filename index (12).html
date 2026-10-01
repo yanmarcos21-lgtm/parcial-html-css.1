@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Parcial Práctico 1 - G611 - 2026: página con HTML semántico, formulario, tabla y accesibilidad.">
+  <title>MyLogo - Parcial Práctico 1</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Enlace para saltar al contenido (accesibilidad con teclado) -->
+  <a class="skip-link" href="#contenido">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#inicio" aria-label="MyLogo, go to home">MyLogo</a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#inicio">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section id="inicio" class="articles" aria-label="Featured articles">
+      <article class="article" id="about">
+        <figure>
+          <img src="assets/industrial.svg" alt="Industrial plant with smokestacks, pipes and a gear" width="80" height="80">
+        </figure>
+        <h2>Article Title</h2>
+        <p>Article content goes here. This is a sample article content.</p>
+      </article>
+
+      <article class="article">
+        <figure>
+          <img src="assets/industrial.svg" alt="Industrial plant with smokestacks, pipes and a gear (second article)" width="80" height="80">
+        </figure>
+        <h2>Article Title</h2>
+        <p>Article content goes here. This is a sample article content.</p>
+      </article>
+    </section>
+
+    <section id="contact" class="form-section" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact Form</h2>
+      <form action="#" method="post">
+        <div class="field">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" autocomplete="name" required>
+        </div>
+
+        <div class="field">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" autocomplete="email" required>
+        </div>
+
+        <div class="field">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="3" required></textarea>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section class="scores-section" aria-labelledby="scores-title">
+      <h2 id="scores-title">Student Scores</h2>
+      <div class="table-wrapper">
+        <table>
+          <caption class="visually-hidden">Student scores in HTML and CSS with totals</caption>
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">HTML</th>
+              <th scope="col">CSS</th>
+              <th scope="col">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">John</th>
+              <td>80</td>
+              <td>90</td>
+              <td>170</td>
+            </tr>
+            <tr>
+              <th scope="row">Jane</th>
+              <td>85</td>
+              <td>95</td>
+              <td>180</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row" colspan="3">Total</th>
+              <td>350</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 MyLogo. Parcial Práctico 1 - G611.</p>
+  </footer>
+</body>
+</html>
